@@ -125,6 +125,9 @@ func main() {
 		if *race {
 			cmd.Args = append(cmd.Args, "-race")
 		}
+		if *verbose {
+			cmd.Args = append(cmd.Args, "-v")
+		}
 		cmd.Args = append(cmd.Args, pkg.ImportPath)
 		if *otherPkgs != "" {
 			cmd.Args = append(cmd.Args, strings.Split(*otherPkgs, ",")...)
